@@ -1,15 +1,15 @@
-FROM python:3.3.5
+# Build as jupyterhub/singleuser
+# Run with the DockerSpawner in JupyterHub
 
-ADD . /box
+FROM nebtex/python-base:machine-learning
 
-WORKDIR /box/server
+MAINTAINER Nebular Vortex <publicdev@nebtex.com>
 
+EXPOSE 8888
 
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    rm get-pip.py
+ADD jupyterhub-singleuser.py /usr/local/bin/jupyterhub-singleuser
+RUN chmod 755 /usr/local/bin/jupyterhub-singleuser
 
+ADD singleuser.sh /srv/singleuser/singleuser.sh
 
-RUN pip3 install -r requirements.txt
-
-
+CMD ["sh", "/srv/singleuser/singleuser.sh"]
