@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # download last version of the init script
 
 
