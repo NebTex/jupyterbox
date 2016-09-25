@@ -9,7 +9,8 @@ EXPOSE 8888
 
 ADD singleuser.sh /srv/singleuser/singleuser.sh
 
-WORKDIR /jupyter
-ENV HOME=/jupyter
-CMD ["sh", "/srv/singleuser/singleuser.sh"]
+WORKDIR /root
+ENV HOME=/root
+
+CMD ["supervisord", "-n"]
 
