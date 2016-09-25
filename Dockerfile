@@ -8,9 +8,16 @@ MAINTAINER Nebular Vortex <publicdev@nebtex.com>
 EXPOSE 8888
 
 ADD singleuser.sh /srv/singleuser/singleuser.sh
+RUN chmod +x /srv/singleuser/singleuser.sh
+
+ADD docker-entrypoint.sh /srv/singleuser/docker-entrypoint.sh
+RUN chmod +x /srv/singleuser/docker-entrypoint.sh
+
+ADD boostrap.sh /srv/singleuser/boostrap.sh
+RUN chmod +x /srv/singleuser/boostrap.sh
 
 WORKDIR /root
 ENV HOME=/root
 
-CMD ["supervisord", "-n"]
+CMD ["/srv/singleuser/boostrap.sh"]
 
