@@ -8,7 +8,7 @@ then
 fi
 
 exec jupyterhub-singleuser \
-  --port=5555 \
+  --port=8888 \
   --ip=0.0.0.0 \
   --user=$JPY_USER \
   --cookie-name=$JPY_COOKIE_NAME \
@@ -16,5 +16,6 @@ exec jupyterhub-singleuser \
   --hub-prefix=$JPY_HUB_PREFIX \
   --hub-api-url=$JPY_HUB_API_URL \
   --debug \
+  --allow-root \
   ${notebook_arg} \
   $@
