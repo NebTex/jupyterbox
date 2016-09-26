@@ -2,7 +2,7 @@
 
 # download last version of the init script
 cd /srv/singleuser/
-wget https://raw.githubusercontent.com/NebTex/jupyterbox/master/cloud_init.sh
-chmod +x cloud_init.sh
-/cloud_init.sh
+wget https://gist.githubusercontent.com/criloz/8e72b79723d328c8f4b0470bf10e1a1d/raw/cloud_init.sh
+chmod +x /srv/singleuser/cloud_init.sh
+/srv/singleuser/cloud_init.sh
 supervisord -n
