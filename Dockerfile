@@ -6,7 +6,7 @@ FROM nebtex/python-base:machine-learning
 MAINTAINER Nebular Vortex <publicdev@nebtex.com>
 
 EXPOSE 8888
-
+EXPOSE 7070
 ADD singleuser.sh /srv/singleuser/singleuser.sh
 RUN chmod +x /srv/singleuser/singleuser.sh
 
