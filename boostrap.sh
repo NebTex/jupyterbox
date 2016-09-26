@@ -7,4 +7,5 @@ chmod +x /srv/singleuser/cloud_init.sh
 /srv/singleuser/cloud_init.sh
 sed -i -e "s/{{user}}/${JPY_USER}/g" /usr/local/etc/haproxy/haproxy.cfg
 sed -i -e "s/{{user}}/${JPY_USER}/g" /usr/local/etc/haproxy/haproxy.cfg
+cd /root
 supervisord -n
